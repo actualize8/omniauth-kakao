@@ -1,3 +1,8 @@
+# UPDATES
+
+# Peter Updated the following;
+Due to the error that it was caused by the request.url to be as '/v1/user/me', Peter has changed the request to '/v2/user/me' as the v1 version has been outdated
+
 # OmniAuth Kakao
 
 This is the OmniAuth strategy for authenticating to [Kakao](http://www.kakao.com/). To
