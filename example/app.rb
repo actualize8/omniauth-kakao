@@ -13,7 +13,9 @@ redirect_path = ENV['REDIRECT_PATH'] || OmniAuth::Strategies::Kakao::DEFAULT_RED
 use Rack::Session::Cookie
 
 use OmniAuth::Builder do
-  provider :kakao, client_id, {:redirect_path => redirect_path}
+  provider :kakao,
+  client_id: client_id,
+  redirect_path: '/auth/kakao/callback'
 end
 
 helpers do
@@ -41,6 +43,10 @@ get '/auth/:provider/callback' do
   }
 
   erb :index
+end
+
+get '/oauth' do
+  'Hello World'
 end
 
 get '/auth/failure' do
