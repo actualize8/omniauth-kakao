@@ -1,7 +1,6 @@
 # UPDATES
-
-# Peter Updated the following;
-Due to the error that it was caused by the request.url to be as '/v1/user/me', Peter has changed the request to '/v2/user/me' as the v1 version has been outdated
+* request.url has been updated to /v2/user/me from '/v1/user/me', this was the official update from Kakao since February 2020
+* params to retrieve the user's name, email and profile image has been changed to match the retrieved information
 
 # OmniAuth Kakao
 
