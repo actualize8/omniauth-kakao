@@ -17,14 +17,10 @@ module OmniAuth
 
       info do
         {
-          'name' => raw_properties['nickname'],
-          'image' => raw_properties['thumbnail_image'],
-          'email' => raw_info['kaccount_email'],
+          'name' => raw_properties['profile']['nickname'] || nil,
+          'image' => raw_properties['profile']['profile_image_url'] || nil,
+          'email' => raw_properties['email'] || nil,
         }
-      end
-
-      extra do
-        {'properties' => raw_properties}
       end
 
       def initialize(app, *args, &block)
@@ -42,8 +38,9 @@ module OmniAuth
       end
 
       def raw_properties
-        @raw_properties ||= raw_info['properties']
+        @raw_properties ||= raw_info['kakao_account']
       end
+
     end
   end
 end
